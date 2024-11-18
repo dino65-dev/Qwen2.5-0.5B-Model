@@ -1,7 +1,7 @@
 
 # Qwen2.5-0.5B-Model
 
-Qwen2.5-0.5B-Model is a project for [brief description of what the project does].
+Qwen2.5-0.5B-Model is a project for [Qwen2.5-0.5B-Model is a project focused on developing and optimizing a machine learning model using Python and HTML for various applications. This model aims to achieve high accuracy and performance in predictive tasks by leveraging advanced algorithms and techniques.].
 
 ## Installation
 
