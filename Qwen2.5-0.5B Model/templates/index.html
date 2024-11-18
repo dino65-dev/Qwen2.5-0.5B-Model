@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Qwen Chat Interface</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+        }
+        h1 {
+            font-size: 3em;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px #000000;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        form {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="text"] {
+            width: 400px;
+            padding: 15px;
+            font-size: 1em;
+            border: none;
+            border-radius: 30px;
+            outline: none;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"]:focus {
+            box-shadow: 0 0 10px rgba(255, 160, 122, 0.7);
+            background: rgba(255, 255, 255, 1);
+        }
+        button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1em;
+            border: none;
+            border-radius: 30px;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #ff7e5f;
+            color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        button:hover {
+            background: #feb47b;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+        button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Qwen Chat Interface</h1>
+        <form method="post">
+            <input type="text" name="prompt" placeholder="Enter your prompt" required/>
+            <button type="submit">Submit</button>
+        </form>
+        {% if response %}
+        <div class="response">
+            <h2>Qwen:</h2>
+            <p>{{ response }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
